@@ -17,6 +17,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        manifestPlaceholders += mapOf("appAuthRedirectScheme" to "com.dnl.appauthtemplate")
     }
 
     buildTypes {
