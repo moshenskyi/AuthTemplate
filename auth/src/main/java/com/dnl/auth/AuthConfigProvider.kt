@@ -1,4 +1,4 @@
-package com.dnl.appauthtemplate.ui.auth
+package com.dnl.auth
 
 import androidx.core.net.toUri
 import net.openid.appauth.AuthorizationServiceConfiguration

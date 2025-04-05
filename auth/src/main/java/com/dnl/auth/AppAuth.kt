@@ -1,4 +1,4 @@
-package com.dnl.appauthtemplate.ui.auth
+package com.dnl.auth
 
 import android.content.Intent
 import kotlinx.coroutines.Job

@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AppAuthTemplate"
 include(":app")
- 
+include(":auth")

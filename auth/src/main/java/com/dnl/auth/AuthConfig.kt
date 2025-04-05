@@ -1,4 +1,4 @@
-package com.dnl.appauthtemplate.ui.auth
+package com.dnl.auth
 
 object AuthConfig {
     const val OPEN_ID_CONNECT_ISSUER_URI = "Your issuer URI"
