@@ -1,0 +1,38 @@
+name: 'Commit documentation'
+runs:
+  using: "composite"
+  steps:
+    - name: Generate documentation
+      shell: bash
+      run: |
+        ./gradlew dokkaHtmlMultiModule
+
+    - name: Clone public repo
+      uses: actions/checkout@v3
+      with:
+        persist-credentials: false
+        repository: moshenskyi/AuthTemplate
+        path: docs
+        token: ${{ inputs.token }}
+        fetch-depth: 0
+
+    - name: Commit files
+      shell: bash
+      run: |
+        git config --local user.email "moshenskyi.nazariy@gmail.com"
+        git config --local user.name "Nazarii Moshenskyi"
+        git add docs
+        git commit -a -m "Update docs"
+
+    - name: Push the generated HTML to the public repo
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ inputs.token }}
+        repository: moshenskyi/AuthTemplate
+        directory: docs
+        force: true
+
+inputs:
+  token:
+    description: 'SSH private key for pushing to the repo'
+    required: true
