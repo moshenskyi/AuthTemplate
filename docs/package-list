@@ -1,0 +1,5 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+com.dnl.appauthtemplate
+com.dnl.appauthtemplate.ui.theme
